@@ -7,7 +7,7 @@ const initialState: TodoState = {
   byIds: {},
 };
 
-export default function (state = initialState, action: TodoActions) {
+const todos =  (state = initialState, action: TodoActions) => {
   switch (action.type) {
     case ActionTypes.ADD_TODO: {
       const { id, content } = action.payload;
@@ -40,3 +40,5 @@ export default function (state = initialState, action: TodoActions) {
       return state;
   }
 }
+
+export default todos
