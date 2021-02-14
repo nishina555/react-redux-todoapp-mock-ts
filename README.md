@@ -8,7 +8,7 @@ React Reduxの公式ドキュメント内で紹介されている[Basic Tutorial
 
 
 あくまでUIが表示されるだけでReduxのつなぎこみは未実装です。
-実装手順は『Basic Tutorial』を参考にしてください。
+実装手順は[Basic Tutorial](https://react-redux.js.org/introduction/basic-tutorial)、もしくは個人ブログ記事『[Reactチュートリアルを関数コンポーネントとTypeScriptで書き換えてみた](https://nishinatoshiharu.com/ts-functional-react-tutorial/)』を参考にしてください。
 
 ---
 
