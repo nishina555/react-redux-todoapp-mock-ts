@@ -1,9 +1,9 @@
 import React from "react";
 import cx from "classnames";
-import { TodoItemState } from "../redux/types";
+import { TodoItem } from "../redux/selectors";
 
 type TodoProps = {
-  todo: TodoItemState;
+  todo: TodoItem;
 };
 
 const Todo: React.FC<TodoProps> = ({ todo }) => (
