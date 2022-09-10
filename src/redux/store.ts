@@ -1,8 +1,12 @@
 import { createStore } from "redux";
 import rootReducer from "./reducers";
 
-export default createStore(
+const store = createStore(
   rootReducer,
   (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
     (window as any).__REDUX_DEVTOOLS_EXTENSION__()
 );
+
+export default store;
+
+export type AppDispatch = typeof store.dispatch
