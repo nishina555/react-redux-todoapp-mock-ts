@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { addTodo } from "../redux/actions";
+import { addTodo } from "../redux/todosSlice";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store";
 

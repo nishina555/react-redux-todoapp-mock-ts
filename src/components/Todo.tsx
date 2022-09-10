@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import { toggleTodo } from "../redux/actions";
+import { toggleTodo } from "../redux/todosSlice";
 import { TodoItem } from "../redux/selectors";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store";

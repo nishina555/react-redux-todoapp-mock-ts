@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import { VISIBILITY_FILTERS } from "../constants";
-import { setFilter } from "../redux/actions";
+import { setFilter } from "../redux/visibilityFilterSlice";
 import { State, VisibilityFilterTypes } from "../redux/types";
 import { AppDispatch } from "../redux/store";
 import { useDispatch, useSelector } from "react-redux";
