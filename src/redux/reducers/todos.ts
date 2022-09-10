@@ -1,15 +1,15 @@
-import { ActionTypes } from "../actionTypes";
-import { TodoActions } from "../actions";
+import { addTodo, toggleTodo } from "../actions";
 import { TodoState } from "../types";
+import { createReducer } from "@reduxjs/toolkit";
 
 const initialState: TodoState = {
   allIds: [],
   byIds: {},
 };
 
-const todos =  (state = initialState, action: TodoActions) => {
-  switch (action.type) {
-    case ActionTypes.ADD_TODO: {
+const todos = createReducer(initialState, (builder) => {
+  builder
+    .addCase(addTodo, (state, action) => {
       const { id, content } = action.payload;
       return {
         ...state,
@@ -22,9 +22,9 @@ const todos =  (state = initialState, action: TodoActions) => {
           },
         },
       };
-    }
-    case ActionTypes.TOGGLE_TODO: {
-      const { id } = action.payload;
+    })
+    .addCase(toggleTodo, (state, action) => {
+      const id = action.payload.id;
       return {
         ...state,
         byIds: {
@@ -35,10 +35,7 @@ const todos =  (state = initialState, action: TodoActions) => {
           },
         },
       };
-    }
-    default:
-      return state;
-  }
-}
+    });
+});
 
-export default todos
+export default todos;

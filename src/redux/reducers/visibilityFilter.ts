@@ -1,19 +1,14 @@
-import { ActionTypes } from "../actionTypes";
 import { VISIBILITY_FILTERS } from "../../constants";
 import { VisibilityFilterTypes } from "../types";
-import { TodoActions } from "../actions";
+import { setFilter } from "../actions";
+import { createReducer } from "@reduxjs/toolkit";
 
-const initialState: VisibilityFilterTypes = VISIBILITY_FILTERS.ALL;
+const initialState = VISIBILITY_FILTERS.ALL as VisibilityFilterTypes;
 
-const visibilityFilter = (state = initialState, action: TodoActions) => {
-  switch (action.type) {
-    case ActionTypes.SET_FILTER: {
-      return action.payload.filter;
-    }
-    default: {
-      return state;
-    }
-  }
-};
+const visibilityFilter = createReducer(initialState, (builder) => {
+  builder.addCase(setFilter, (state, action) => {
+    return action.payload.filter;
+  });
+});
 
 export default visibilityFilter;
